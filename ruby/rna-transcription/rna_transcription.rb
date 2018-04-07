@@ -1,12 +1,14 @@
 class Complement
-    # replace dna nucleotide with corresponding rna nucleotide
-    # G -> C
-    # C -> G
-    # T -> A
-    # A -> U
+    StrandConversion = {"G" => "C",
+                        "C" => "G",
+                        "T" => "A",
+                        "A" => "U"}
 
-    def self.of_dna(strand)
-        return "" if strand.include? #anything other than GCTA
-        # replace above matches 
+    def self.of_dna(dna_strand)
+        dna_strand.size == dna_strand.gsub!(/./, StrandConversion).size ? dna_strand : ''
     end
+end
+
+module BookKeeping
+    VERSION = 4
 end
