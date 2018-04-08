@@ -8,13 +8,7 @@ class Squares
     end
 
     def sum_of_squares()
-        sum = 0
-        (1..@num).each { |x| sum += x ** 2}
-        sum
-
-        # below is a cool one-liner but is more costly
-        # since you're making an array for no reason
-        # Array.new( (1..@num).map { | x | x ** 2} ).sum
+        (1..@num).sum { | x | x ** 2 }
     end
 
     def difference()
